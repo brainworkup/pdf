@@ -3,4 +3,7 @@
 __pycache__/
 .history/
 .vscode
-.venv
+.venv/
+.env
+custom_index/pdf_index.index
+index/pdf_index.index
