@@ -76,6 +76,7 @@ python pdf.py --pdf_dir /path/to/pdf/files \
 | `--query` | Query to search for (optional) | None |
 | `--top_k` | Number of results to return | 5 |
 | `--generate` | Generate answer using LLM | False |
+| `--help_examples` | Show usage examples and exit | False |
 
 ## Features
 
@@ -95,3 +96,36 @@ python pdf.py --pdf_dir ~/clinical_documents --recursive
 
 # Search the index with a clinical question
 python pdf.py --pdf_dir ~/clinical_documents --query "What are the latest ADHD diagnostic criteria for adults?" --generate
+```
+
+## Troubleshooting
+
+### Path Issues
+
+If you encounter issues with paths containing spaces, make sure to properly quote them:
+
+```bash
+python pdf.py --pdf_dir "/path with spaces/to/pdfs" --query "Your query here"
+```
+
+You can also use the special help flag to see examples:
+
+```bash
+python pdf.py --help_examples
+```
+
+### Missing Dependencies
+
+If you see an error about missing dependencies, the script will provide instructions for installing them:
+
+```bash
+pip install numpy PyPDF2 faiss-cpu tqdm openai python-dotenv
+```
+
+### API Key Issues
+
+If you encounter OpenAI API key errors:
+
+1. Make sure you have a `.env` file in the same directory as the script with your API key
+2. The key should be in the format: `OPENAI_API_KEY=your_key_here`
+3. Check that the python-dotenv package is installed
